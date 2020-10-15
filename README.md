@@ -2,7 +2,7 @@
 rancher-monitoring-v2-demo
 
 ## Demo resource for custom metrics configuration of ServiceMonitors and PodMonitors.
-create a namespace ns-1
+create a namespace example
 
 deploy the following files to the namespace
 
@@ -16,10 +16,12 @@ deploy the following files to the namespace
 
 The following new target should show in Prometheus → Status → Targets:
 
-  ns-1/example-app-pod-monitor
+  example/example-app-pod-monitor
 
-  ns-1/example-app-service-monitor
+  example/example-app-service-monitor
+  
 scale up/down the deployment example-app
+
  the number of elements of the target increases/decreases reflecting the changing of the number of pods
  
  
@@ -29,16 +31,20 @@ scale up/down the deployment example-app
   
 ### Configure additional alert by creating a new CRD. 
  ”kubectl create -f alert.yml”
+
  Validate additional alert is configured and fired
+ 
  Verify notification is received: the alert alert-to-webhook should go to the webhook website, the rest should go to Slack  
 
 ## Configure additional alerts and group them using the sample below:
  ”kubectl create -f alert.yml”
+ 
   Validate additional alert is configured and fired. Verify the alerts are grouped correctly in the alert manager browser console 
+  
   Verify notification is received
 
-## additional info
-RBAC
+## additional info RBAC
+
 k get clusterrole | grep -i grafa
 
 
