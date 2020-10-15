@@ -39,12 +39,8 @@ scale up/down the deployment example-app
 
 ## additional info
 RBAC
+k get clusterrole | grep -i grafa
 
-➜ k get clusterrole | grep -i grafa
-grafana-config-edit                                                    2020-07-21T20:50:28Z
-grafana-config-view                                                    2020-07-21T20:50:28Z
-...
-➜ k get clusterrole | grep -i moni
-monitoring-admin                                                       2020-07-21T20:50:28Z
-monitoring-edit                                                        2020-07-21T20:50:28Z
-monitoring-view                                                        2020-07-21T20:50:28Z
+
+k get clusterrole | grep -i moni
+
