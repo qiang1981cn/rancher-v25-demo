@@ -1,0 +1,35 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: alert-1
+  namespace: cattle-monitoring-system
+spec:
+  groups:
+  - name: example.rules
+    rules:
+    - alert: alert-to-webhook
+      annotations:
+        message: this alert should go to webhook 
+      expr: vector(1)
+      labels:
+        severity: none
+        job: for-webhook
+
+---
+
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: alert-2
+  namespace: cattle-monitoring-system
+spec:
+  groups:
+  - name: example.rules
+    rules:
+    - alert: alert-to-slack
+      annotations:
+        message: this alert should go to slack 
+      expr: vector(1)
+      labels:
+        severity: warning
+        job: for-slack

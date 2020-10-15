@@ -1,0 +1,23 @@
+route:  
+  group_by: ['severity', 'job', 'alertname']
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 3m
+  receiver: 'slack-notifications'
+  routes:
+  - receiver: 'webhook-test'
+    match:
+      job: for-webhook
+
+receivers:
+- name: 'webhook-test'
+  webhook_configs:
+  - send_resolved: true
+    url: 'https://webhook.site/529c248d-13be-47e7-92bd-823668b9bc59'
+- name: 'slack-notifications'
+  slack_configs:
+  - send_resolved: true
+    text: '{{ template "slack.rancher.text" . }}'
+    api_url: 'https://hooks.slack.com/services/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'
+templates:
+- /etc/alertmanager/config/*.tmpl
