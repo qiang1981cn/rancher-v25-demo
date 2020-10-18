@@ -1,0 +1,13 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterFlow
+metadata:
+  name: cf-2ns
+  namespace: cattle-logging-system
+spec:
+  globalOutputRefs:
+  - co-es-2ns
+  match:
+  - select:
+      namespaces:
+      - wordpress
+      - wordpress-tqbjf

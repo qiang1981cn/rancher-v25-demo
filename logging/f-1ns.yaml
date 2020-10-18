@@ -1,0 +1,8 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: Flow
+metadata:
+  name: f-1ns
+  namespace: wordpress
+spec:
+  localOutputRefs:
+  - o-1ns

@@ -1,0 +1,12 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterOutput
+metadata:
+  name: ref-co-es-pod-label
+  namespace: cattle-logging-system
+spec:
+  loggingRef: logging-test
+  elasticsearch:
+    host: elasticsearch-master.cattle-logging-system
+    index_name: ref-co-es-pod-label
+    port: 9200
+    scheme: http

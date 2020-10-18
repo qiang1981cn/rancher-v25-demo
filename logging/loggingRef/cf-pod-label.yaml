@@ -1,0 +1,15 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterFlow
+metadata:
+  name: ref-cf-pod-label
+  namespace: cattle-logging-system
+spec:
+  globalOutputRefs:
+  - ref-co-es-pod-label
+  loggingRef: logging-test
+  match:
+  - select:
+      container_names: []
+      hosts: []
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-default-nginx

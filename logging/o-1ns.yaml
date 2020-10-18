@@ -1,0 +1,11 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: Output
+metadata:
+  name: o-1ns
+  namespace: wordpress
+spec:
+  elasticsearch:
+    host: elasticsearch-master.cattle-logging-system
+    index_name: o-1ns
+    port: 9200
+    scheme: http

@@ -1,0 +1,26 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: Logging
+metadata:
+  name: logging-test
+spec:
+  controlNamespace: cattle-logging-system
+  loggingRef: logging-test
+  fluentbit:
+    image:
+      repository: rancher/fluent-fluent-bit
+      tag: 1.5.4
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      value: "true"
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      value: "true"
+  fluentd:
+    configReloaderImage:
+      repository: rancher/jimmidyson-configmap-reload
+      tag: v0.2.2
+    disablePvc: true
+    image:
+      repository: rancher/banzaicloud-fluentd
+      tag: v1.11.2-alpine-2
