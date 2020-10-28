@@ -29,18 +29,11 @@ scale up/down the deployment example-app
   webhook for testing purpose for free: https://webhook.site 
   
 ### Configure additional alert by creating a new CRD. 
- ”kubectl create -f alert.yml”
+ ”kubectl create -f xxx.yml”
 
  Validate additional alert is configured and fired
  
  Verify notification is received: the alert alert-to-webhook should go to the webhook website, the rest should go to Slack  
-
-## Configure additional alerts and group them using the sample below:
- ”kubectl create -f alert.yml”
- 
-  Validate additional alert is configured and fired. Verify the alerts are grouped correctly in the alert manager browser console 
-  
-  Verify notification is received
 
 ## additional info RBAC
 
