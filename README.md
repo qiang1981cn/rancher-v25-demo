@@ -1,5 +1,4 @@
 # rancher-monitoring-v2-demo
-rancher-monitoring-v2-demo
 
 ## Demo resource for custom metrics configuration of ServiceMonitors and PodMonitors.
 create a namespace example
@@ -50,3 +49,8 @@ k get clusterrole | grep -i grafa
 
 k get clusterrole | grep -i moni
 
+
+
+# rancher-logging-v2-demo
+
+install efk first before logging demo
