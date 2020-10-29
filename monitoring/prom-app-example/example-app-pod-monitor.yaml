@@ -2,6 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: example-app-pod-monitor
+  namespace: example
   labels:
     team: frontend
 spec:
