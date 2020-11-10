@@ -1,0 +1,35 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: prometheus-example-rules
+  namespace: cattle-monitoring-system
+  labels:
+    app: rancher-monitoring
+    release: rancher-monitoring
+spec:
+  groups:
+  - name: example.rules
+    rules:
+    - alert: ExampleAlert
+      annotations:
+        message: Hello World!
+      expr: vector(1)
+      labels:
+        severity: none
+        job: example
+  - name: newexample.rules
+    rules:
+    - alert: NewExampleAlert1
+      annotations:
+        message: Hello World!
+      expr: vector(1)
+      labels:
+        severity: none
+        job: example
+    - alert: NewExampleAlert2
+      annotations:
+        message: Hello World!
+      expr: vector(1)
+      labels:
+        severity: none
+        job: example

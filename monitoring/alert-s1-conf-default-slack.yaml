@@ -9,6 +9,6 @@ receivers:
   slack_configs:
   - send_resolved: true
     text: '{{ template "slack.rancher.text" . }}'
-    api_url: 'https://hooks.slack.com/services/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'
+    api_url: 'https://hooks.slack.com/services/XXXXXXXXXXXX'
 templates:
 - /etc/alertmanager/config/*.tmpl

@@ -10,4 +10,4 @@ spec:
   - select:
       namespaces:
       - wordpress
-      - wordpress-tqbjf
+      - wordpress-aaaa
